@@ -12,7 +12,7 @@ const theme = Theme;
 ReactDOM.render(
 	<MuiThemeProvider theme={theme}>
 		<CssBaseline />
-		<App />,
+		<App />
 	</MuiThemeProvider>,
 	document.getElementById('root')
 );
