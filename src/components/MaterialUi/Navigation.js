@@ -28,6 +28,7 @@ const styles = (theme) => ({
 		display: 'flex'
 	},
 	appBar: {
+		height: theme.spacing.unit * 7,
 		zIndex: theme.zIndex.drawer + 1,
 		transition: theme.transitions.create([ 'width', 'margin' ], {
 			easing: theme.transitions.easing.sharp,
@@ -35,6 +36,7 @@ const styles = (theme) => ({
 		})
 	},
 	appBarShift: {
+		height: theme.spacing.unit * 7,
 		marginLeft: drawerWidth,
 		width: `calc(100% - ${drawerWidth}px)`,
 		transition: theme.transitions.create([ 'width', 'margin' ], {
@@ -77,7 +79,7 @@ const styles = (theme) => ({
 		alignItems: 'center',
 		justifyContent: 'flex-end',
 		padding: '0 8px',
-		...theme.mixins.toolbar
+		height: theme.spacing.unit * 7
 	},
 	content: {
 		flexGrow: 1,
@@ -155,7 +157,7 @@ class MiniDrawer extends React.Component {
 					open={this.state.open}
 				>
 					<div className={classes.toolbar}>
-						<IconButton onClick={this.handleDrawerClose}>
+						<IconButton onClick={this.handleDrawerClose} className={classes.iconButton}>
 							{theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
 						</IconButton>
 					</div>
