@@ -14,9 +14,6 @@ import Tab from '@material-ui/core/Tab';
 
 const styles = (theme) => ({
 	root: {
-		backgroundColor: theme.palette.background.paper,
-		padding: theme.spacing.unit,
-		borderRadius: theme.spacing.unit / 2,
 		width: '100%',
 		position: 'relative',
 		minHeight: 200,
