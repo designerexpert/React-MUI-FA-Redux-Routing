@@ -177,7 +177,7 @@ class MiniDrawer extends React.Component {
 					<List>
 						{upperDrawerSection.map((item) => {
 							return (
-								<ListItem button component={Link} to={item.to}>
+								<ListItem key={item.label} button component={Link} to={item.to}>
 									<ListItemIcon>
 										<FontIcon kind={item.kind} />
 									</ListItemIcon>
@@ -189,7 +189,7 @@ class MiniDrawer extends React.Component {
 					<Divider />
 					<List>
 						{lowerDrawerSection.map((item) => (
-							<ListItem button component={Link} to={item.to}>
+							<ListItem key={item.label} button component={Link} to={item.to}>
 								<ListItemIcon>
 									<FontIcon kind={item.kind} />
 								</ListItemIcon>
