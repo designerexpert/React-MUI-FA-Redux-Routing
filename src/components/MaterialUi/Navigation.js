@@ -113,7 +113,7 @@ class MiniDrawer extends React.Component {
 			{ label: 'Charts & Graphs', kind: 'bar_chart', to: 'charts-graphs' }
 		];
 		const lowerDrawerSection = [
-			{ label: 'Source Code', kind: 'code', to: 'https://github.com/designerexpert/React-MUI-FA-Redux-Routing' },
+			{ label: 'Source Code', kind: 'code', to: 'github' },
 			{
 				label: 'Sandbox Environment',
 				kind: 'computer',

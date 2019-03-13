@@ -7,6 +7,7 @@ import MuiForms from './components/MaterialUi/MuiForms';
 import MuiTables from './components/MaterialUi/MuiTables';
 import Charts from './components/Charts/Charts';
 import Sandbox from './components/Frames/Sandbox';
+import Github from './components/Frames/Github';
 import 'typeface-lato';
 import './App.css';
 
@@ -22,6 +23,7 @@ class App extends Component {
 						<Route path="/tables-pagination" component={MuiTables} />
 						<Route path="/charts-graphs" component={Charts} />
 						<Route path="/sandbox" component={Sandbox} />
+						<Route path="/github" component={Github} />
 					</Navigation>
 				</BrowserRouter>
 			</React.Fragment>
