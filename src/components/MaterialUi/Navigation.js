@@ -7,7 +7,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -16,10 +15,10 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import FontIcon from './Icons/FontIcon';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -107,7 +106,20 @@ class MiniDrawer extends React.Component {
 
 	render() {
 		const { classes, theme } = this.props;
-
+		const upperDrawerSection = [
+			{ label: 'Home', kind: 'home', to: '/' },
+			{ label: 'Forms & Validation', kind: 'assignment', to: 'forms-validation' },
+			{ label: 'Tables & Pagination', kind: 'table_chart', to: 'tables-pagination' },
+			{ label: 'Charts & Graphs', kind: 'bar_chart', to: 'charts-graphs' }
+		];
+		const lowerDrawerSection = [
+			{ label: 'Source Code', kind: 'code', to: 'https://github.com/designerexpert/React-MUI-FA-Redux-Routing' },
+			{
+				label: 'Sandbox Environment',
+				kind: 'computer',
+				to: 'sandbox'
+			}
+		];
 		return (
 			<div className={classes.root}>
 				<CssBaseline />
@@ -163,19 +175,25 @@ class MiniDrawer extends React.Component {
 					</div>
 					<Divider />
 					<List>
-						{[ 'Inbox', 'Starred', 'Send email', 'Drafts' ].map((text, index) => (
-							<ListItem button key={text}>
-								<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-								<ListItemText primary={text} />
-							</ListItem>
-						))}
+						{upperDrawerSection.map((item) => {
+							return (
+								<ListItem button component={Link} to={item.to}>
+									<ListItemIcon>
+										<FontIcon kind={item.kind} />
+									</ListItemIcon>
+									<ListItemText primary={item.label} />
+								</ListItem>
+							);
+						})}
 					</List>
 					<Divider />
 					<List>
-						{[ 'All mail', 'Trash', 'Spam' ].map((text, index) => (
-							<ListItem button key={text}>
-								<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-								<ListItemText primary={text} />
+						{lowerDrawerSection.map((item) => (
+							<ListItem button component={Link} to={item.to}>
+								<ListItemIcon>
+									<FontIcon kind={item.kind} />
+								</ListItemIcon>
+								<ListItemText primary={item.label} />
 							</ListItem>
 						))}
 					</List>
