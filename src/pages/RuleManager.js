@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SelectTable from './SelectTable';
 import './RuleManager.css';
 
 class RuleManager extends Component {
@@ -64,10 +65,8 @@ class RuleManager extends Component {
 					<tr
 						key={`rule_row_${rule.label}`}
 						className={`rule-row ${ruleIndex === this.state.selectedRule ? 'selected-rule' : ''}`}
+						onClick={(e) => this.handleSelectRule(e, ruleIndex)}
 					>
-						<td className="rule-label rule-label-cell" onClick={(e) => this.handleSelectRule(e, ruleIndex)}>
-							{rule.label}
-						</td>
 						<td className="active-rule-section">
 							<input
 								type="checkbox"
@@ -77,6 +76,7 @@ class RuleManager extends Component {
 								onChange={(e) => this.handleRuleToggle(e, ruleIndex)}
 							/>
 						</td>
+						<td className="rule-label-cell">{rule.label}</td>
 					</tr>
 				);
 			}
@@ -106,38 +106,21 @@ class RuleManager extends Component {
 	};
 
 	render() {
-		const ListOfRules = this.generateRulesList(this.state.rules, this.state.rulesFilter);
 		return (
 			<div className="page-container">
 				<div className="left-3">
 					<h1>SELECT RULES</h1>
-					<input
-						className="filter-input"
-						type="text"
-						name="filter-rules"
-						id="filter-rules"
-						placeholder="Filter Rules"
-						onChange={this.handleRulesFilter}
-					/>
-					<div className="rules-header-container noscroll">
-						<table className="rules-table">
-							<thead>
-								<tr className="rule-header-row">
-									<th className="rule-label-cell">Rule Name</th>
-									<th className="rule-active-cell">Active</th>
-								</tr>
-							</thead>
-						</table>
-					</div>
-					<div className="table-container">
-						<table className="rules-table">
-							<tbody className="rows-body">{ListOfRules}</tbody>
-						</table>
-					</div>
 
-					<div className="add-rule-container">
+					<SelectTable
+						rows={this.state.rules}
+						maxHeight={80}
+						select={this.handleSelectRule}
+						toggle={this.handleRuleToggle}
+					/>
+
+					<div className="add-row-container">
 						<input
-							className="new-rule-input"
+							className="new-row-input"
 							type="text"
 							name="add-new-rule"
 							id="add-new-rule"
@@ -145,7 +128,7 @@ class RuleManager extends Component {
 							value={this.state.newRuleName}
 							onChange={this.handleNewRuleName}
 						/>
-						<button className="rules-button button primary" onClick={this.handleNewRule}>
+						<button className="rows-button button primary" onClick={this.handleNewRule}>
 							Add New Rule
 						</button>
 					</div>
@@ -157,11 +140,11 @@ class RuleManager extends Component {
 					</h2>
 					<textarea
 						value={this.state.rules[this.state.selectedRule].code}
-						className="rule-code"
+						className="row-code"
 						onChange={this.handleRuleCodeChange}
 					/>
 					<div className="button-row">
-						<button className="rules-button button primary" onClick={this.handleSubmitCodeChange}>
+						<button className="rows-button button primary" onClick={this.handleSubmitCodeChange}>
 							Submit / Change
 						</button>
 					</div>

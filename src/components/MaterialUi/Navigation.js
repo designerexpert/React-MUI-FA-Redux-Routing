@@ -111,7 +111,8 @@ class MiniDrawer extends React.Component {
 			{ label: 'Forms & Validation', kind: 'assignment', to: 'forms-validation' },
 			{ label: 'Tables & Pagination', kind: 'table_chart', to: 'tables-pagination' },
 			{ label: 'Charts & Graphs', kind: 'bar_chart', to: 'charts-graphs' },
-			{ label: 'Rules', kind: 'assignment', to: 'rules' }
+			{ label: 'Rules', kind: 'table_chart', to: 'rules' },
+			{ label: 'Extracts', kind: 'table_chart', to: 'extracts' }
 		];
 		const lowerDrawerSection = [
 			{ label: 'Source Code', kind: 'code', to: 'github' },

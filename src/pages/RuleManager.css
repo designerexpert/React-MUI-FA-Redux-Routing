@@ -42,15 +42,28 @@
 	height: 90vh;
 }
 
-.rule-code {
+.select-table-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin: 1rem 0;
+	padding-top: 1rem;
+	border-radius: 0.25rem;
+	border: 1px solid rgba(0, 100, 255, 0.1);
+	overflow: hidden;
+	background-color: rgb(241, 241, 241);
+}
+
+.row-code {
 	height: 90%;
 	border: 1px solid lightgray;
 	border-radius: 0.25rem;
 	margin: 1rem;
 	padding: 1rem;
+	outline: none;
 }
 
-.selected-rule {
+.selected-row {
 	background-color: rgba(0, 100, 255, 0.1);
 }
 .button-row {
@@ -62,52 +75,60 @@
 	padding: 1rem;
 }
 
-.active-rule-section {
+.active-row-section {
 	display: flex;
 	justify-content: center;
-	border-left: 1px solid lightgray;
 }
 
-.rule-row {
+.rows-body {
+	background-color: rgb(246, 251, 255);
+}
+.row-row {
 	padding: 1rem;
 	border-bottom: 1px solid lightgray;
 	cursor: pointer;
 }
 
-.rule-row td {
+.row-row td {
 	padding: 0.5rem;
 }
 
-.rule-header-row th {
-	padding: 0.5rem 0;
+.row-header-row th {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 }
 
-.rules-table {
+.header {
+	padding-left: 0.5rem;
+	text-align: left;
+}
+.rows-table {
 	table-layout: fixed;
 	width: 100%;
 }
 
-.rules-header-container {
+.rows-header-container {
 	border-bottom: 3px solid darkblue;
 }
 
 .table-container {
+	min-height: 2.2rem;
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
 	width: 100%;
-	height: 70vh;
 	overflow-y: scroll;
 }
 
-.rule-label-cell {
+.row-label-cell {
 	white-space: nowrap;
 	overflow: hidden;
 	width: 80%;
 }
 
-.rule-active-cell {
+.row-active-cell {
 	width: 20%;
 }
 
@@ -115,7 +136,7 @@
 	padding-right: 18px;
 }
 
-.add-rule-container {
+.add-row-container {
 	display: flex;
 	flex-wrap: nowrap;
 	align-items: center;
@@ -123,14 +144,15 @@
 	padding: 1rem 0;
 }
 
-.new-rule-input {
+.new-row-input {
 	padding: 0.5rem;
 	border-radius: 0.25rem;
 	border: 1px solid lightgray;
 	flex: 1;
+	outline: none;
 }
 
-.rules-button {
+.rows-button {
 	white-space: nowrap;
 	border-radius: 0.25rem;
 	padding: 0.5rem;
@@ -139,7 +161,7 @@
 	cursor: pointer;
 }
 
-.rules-button:hover {
+.rows-button:hover {
 	border-radius: 0.25rem;
 	padding: 0.5rem;
 	border: 1px solid rgba(0, 100, 255, 0.9);
@@ -151,5 +173,6 @@
 	padding: 0.5rem;
 	border-radius: 0.25rem;
 	border: 1px solid lightgray;
-	margin: 1rem;
+	width: 100%;
+	outline: none;
 }

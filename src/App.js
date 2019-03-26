@@ -9,6 +9,7 @@ import Charts from './components/Charts/Charts';
 import Sandbox from './components/Frames/Sandbox';
 import Github from './components/Frames/Github';
 import RuleManager from './pages/RuleManager';
+import ExtractManager from './pages/ExtractManager';
 import 'typeface-lato';
 import './App.css';
 
@@ -26,6 +27,7 @@ class App extends Component {
 						<Route path="/sandbox" component={Sandbox} />
 						<Route path="/github" component={Github} />
 						<Route path="/rules" component={RuleManager} />
+						<Route path="/extracts" component={ExtractManager} />
 					</Navigation>
 				</BrowserRouter>
 			</React.Fragment>
