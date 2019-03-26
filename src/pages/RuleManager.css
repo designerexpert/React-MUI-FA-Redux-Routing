@@ -1,0 +1,140 @@
+.page-container {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.page-container h1 {
+	padding: 1rem;
+	font-weight: 900;
+	width: 100%;
+	border-bottom: 1px solid lightgray;
+}
+
+.left-3 {
+	width: 35%;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid lightblue;
+	height: 90vh;
+}
+
+.right-7 {
+	width: 65%;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid lightblue;
+	height: 90vh;
+}
+
+.rule-code {
+	height: 90%;
+	border: 1px solid lightgray;
+	border-radius: 0.25rem;
+	margin: 1rem;
+	padding: 1rem;
+}
+
+.selected-rule {
+	background-color: rgba(0, 100, 255, 0.1);
+}
+.button-row {
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	height: 10%;
+	padding: 1rem;
+}
+
+.active-rule-section {
+	display: flex;
+	justify-content: center;
+	border-left: 1px solid lightgray;
+}
+
+.rule-row {
+	padding: 1rem;
+	border-bottom: 1px solid lightgray;
+	cursor: pointer;
+}
+
+.rule-row td {
+	padding: 0.5rem;
+}
+
+.rule-header-row th {
+	padding: 0.5rem 0;
+}
+
+.rules-table {
+	table-layout: fixed;
+	width: 100%;
+}
+
+.table-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+	height: 60vh;
+	overflow-y: scroll;
+}
+
+.rule-label-cell {
+	width: 80%;
+}
+
+.rule-active-cell {
+	width: 20%;
+}
+
+.noscroll {
+	padding-right: 18px;
+}
+
+.rules-header-container {
+	border-bottom: 3px solid darkblue;
+}
+
+.add-rule-container {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+}
+
+.new-rule-input {
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	border: 1px solid lightgray;
+	flex: 1;
+}
+
+.rules-button {
+	border-radius: 0.25rem;
+	padding: 0.5rem;
+	border: 1px solid rgba(0, 100, 255, 0.3);
+	background-color: rgba(0, 100, 255, 0.2);
+	margin-left: 1rem;
+	cursor: pointer;
+}
+
+.rules-button:hover {
+	border-radius: 0.25rem;
+	padding: 0.5rem;
+	border: 1px solid rgba(0, 100, 255, 0.9);
+	background-color: rgba(0, 100, 255, 0.8);
+	color: white;
+	margin-left: 1rem;
+}
+
+.filter-input {
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	border: 1px solid lightgray;
+	margin: 1rem;
+}
