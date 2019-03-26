@@ -152,6 +152,9 @@ class RuleManager extends Component {
 				</div>
 				<div className="right-7">
 					<h1>RULE CODE SECTION</h1>
+					<h2>
+						Selected Rule Label: <span>{this.state.rules[this.state.selectedRule].label}</span>
+					</h2>
 					<textarea
 						value={this.state.rules[this.state.selectedRule].code}
 						className="rule-code"

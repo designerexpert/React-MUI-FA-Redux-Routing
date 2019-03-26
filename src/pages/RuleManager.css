@@ -1,7 +1,7 @@
 .page-container {
 	width: 100%;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	align-items: flex-start;
 }
 
@@ -12,18 +12,32 @@
 	border-bottom: 1px solid lightgray;
 }
 
+.page-container h2 {
+	padding: 1rem 0 0 1rem;
+	font-weight: 400;
+	width: 100%;
+}
+
+.page-container h2 span {
+	color: rgba(0, 100, 255, 0.5);
+}
+
 .left-3 {
+	padding: 1rem;
 	width: 35%;
 	display: flex;
 	flex-direction: column;
 	border: 1px solid lightblue;
+	border-radius: 0.5rem;
 	height: 90vh;
 }
 
 .right-7 {
-	width: 65%;
+	padding: 1rem;
+	width: 64%;
 	display: flex;
 	flex-direction: column;
+	border-radius: 0.5rem;
 	border: 1px solid lightblue;
 	height: 90vh;
 }
@@ -73,17 +87,23 @@
 	width: 100%;
 }
 
+.rules-header-container {
+	border-bottom: 3px solid darkblue;
+}
+
 .table-container {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
 	width: 100%;
-	height: 60vh;
+	height: 70vh;
 	overflow-y: scroll;
 }
 
 .rule-label-cell {
+	white-space: nowrap;
+	overflow: hidden;
 	width: 80%;
 }
 
@@ -95,16 +115,12 @@
 	padding-right: 18px;
 }
 
-.rules-header-container {
-	border-bottom: 3px solid darkblue;
-}
-
 .add-rule-container {
 	display: flex;
 	flex-wrap: nowrap;
 	align-items: center;
 	justify-content: space-between;
-	padding: 1rem;
+	padding: 1rem 0;
 }
 
 .new-rule-input {
@@ -115,11 +131,11 @@
 }
 
 .rules-button {
+	white-space: nowrap;
 	border-radius: 0.25rem;
 	padding: 0.5rem;
 	border: 1px solid rgba(0, 100, 255, 0.3);
 	background-color: rgba(0, 100, 255, 0.2);
-	margin-left: 1rem;
 	cursor: pointer;
 }
 
@@ -129,7 +145,6 @@
 	border: 1px solid rgba(0, 100, 255, 0.9);
 	background-color: rgba(0, 100, 255, 0.8);
 	color: white;
-	margin-left: 1rem;
 }
 
 .filter-input {
