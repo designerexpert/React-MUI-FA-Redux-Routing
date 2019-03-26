@@ -47,6 +47,28 @@ class ExtractManager extends Component {
 		]
 	};
 
+	componentDidMount() {
+		this.sortColumns('sources');
+		this.sortColumns('tables');
+		this.sortColumns('columns');
+	}
+
+	sortColumns = (type) => {
+		const arrCopy = JSON.parse(JSON.stringify(this.state[type]));
+		arrCopy.sort((a, b) => {
+			if (a.source && b.source) {
+				if (a.source > b.source) return 1;
+				if (a.source < b.source) return -1;
+				return 0;
+			} else {
+				if (a.label > b.label) return 1;
+				if (a.label < b.label) return -1;
+				return 0;
+			}
+		});
+		this.setState({ [type]: arrCopy });
+	};
+
 	handleRulesFilter = (e) => {
 		this.setState({ rulesFilter: e.target.value });
 	};

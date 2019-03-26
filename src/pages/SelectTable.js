@@ -28,6 +28,9 @@ class SelectTable extends Component {
 
 	generateRows = (rows, filter) => {
 		return rows.map((row, rowIndex) => {
+			const rowLabel = `${row.source ? row.source + ' :: ' : ''}${row.table
+				? row.table + ' :: '
+				: ''}${row.label}`;
 			// console.log('FLAG IS!', flag);
 			// console.log('LENGTH OF FILTERS IS', this.props.filters.length);
 			let flag = 0;
@@ -61,7 +64,7 @@ class SelectTable extends Component {
 									onChange={(e) => this.handleRowToggle(e, rowIndex)}
 								/>
 							</td>
-							<td className="row-label-cell">{row.label}</td>
+							<td className="row-label-cell">{rowLabel}</td>
 						</tr>
 					);
 				}
