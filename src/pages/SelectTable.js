@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import './RuleManager.css';
 
+const mockData = [
+	{ label: 'Test', active: false },
+	{ label: 'Prueba', active: false },
+	{ label: 'اختبار', active: false },
+	{ label: 'тестовое задание', active: false }
+];
+
 class SelectTable extends Component {
 	state = {
+		rows: mockData,
 		rowsFilter: '',
 		selectedRow: 0
 	};
@@ -20,9 +28,18 @@ class SelectTable extends Component {
 		}
 	};
 
+	toggleRow = (e, rowIndex) => {
+		const copyOfRows = JSON.parse(JSON.stringify(this.state.rows));
+		const foundRow = copyOfRows[rowIndex];
+		foundRow.active = !foundRow.active;
+		this.setState({ rows: copyOfRows });
+	};
+
 	handleRowToggle = (e, rowIndex) => {
 		if (typeof this.props.toggle === 'function') {
 			this.props.toggle(e, rowIndex);
+		} else {
+			this.toggleRow(e, rowIndex);
 		}
 	};
 
@@ -73,7 +90,7 @@ class SelectTable extends Component {
 	};
 
 	render() {
-		const Rows = this.generateRows(this.props.rows, this.state.rowsFilter);
+		const Rows = this.generateRows(this.props.rows || this.state.rows, this.state.rowsFilter);
 		const maxHeight = this.props.maxHeight;
 		return (
 			<div className="select-table-container" style={{ maxHeight: `${maxHeight}%` }}>
