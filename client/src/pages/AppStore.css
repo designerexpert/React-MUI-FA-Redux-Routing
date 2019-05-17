@@ -1,0 +1,29 @@
+svg {
+}
+svg g {
+	fill: #6d819c;
+}
+svg g.hexagon-group .hexagon polygon {
+	transform-origin: center;
+	stroke: #263959;
+	stroke-width: 0.2;
+}
+
+svg g .hexagon-group .hexagon:hover {
+	animation: expandMouseover 0.8s ease-out alternate infinite !important;
+	animation-fill-mode: freeze;
+}
+
+svg g text {
+	fill: white;
+	font-size: 5px;
+}
+
+@keyframes expandMouseover {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.2);
+	}
+}

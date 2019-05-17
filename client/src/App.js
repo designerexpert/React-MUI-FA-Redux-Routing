@@ -10,6 +10,8 @@ import Sandbox from './components/Frames/Sandbox';
 import Github from './components/Frames/Github';
 import RuleManager from './pages/RuleManager';
 import ExtractManager from './pages/ExtractManager';
+import AppStore from './pages/AppStore';
+
 import { connect } from 'react-redux';
 import { userAuth } from './actions';
 import axios from 'axios';
@@ -84,6 +86,7 @@ class App extends Component {
 						<Route path="/github" component={Github} />
 						<Route path="/rules" component={RuleManager} />
 						<Route path="/extracts" component={ExtractManager} />
+						<Route path="/app-store" component={AppStore} />
 					</Navigation>
 				</BrowserRouter>
 			</React.Fragment>
