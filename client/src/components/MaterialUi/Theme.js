@@ -7,6 +7,7 @@ export default createMuiTheme({
 		useNextVariants: true
 	},
 	palette: {
+		type: 'dark',
 		primary: blue,
 		secondary: red
 	},
