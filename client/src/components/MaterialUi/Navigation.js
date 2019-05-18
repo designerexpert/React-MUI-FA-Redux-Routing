@@ -27,6 +27,7 @@ const styles = (theme) => ({
 		display: 'flex'
 	},
 	appBar: {
+		backgroundColor: '#1F1F1F',
 		height: theme.spacing.unit * 7,
 		zIndex: theme.zIndex.drawer + 1,
 		transition: theme.transitions.create([ 'width', 'margin' ], {
@@ -108,11 +109,7 @@ class MiniDrawer extends React.Component {
 		const { classes, theme } = this.props;
 		const upperDrawerSection = [
 			{ label: 'Home', kind: 'home', to: '/' },
-			{ label: 'Forms & Validation', kind: 'assignment', to: 'forms-validation' },
-			{ label: 'Tables & Pagination', kind: 'table_chart', to: 'tables-pagination' },
-			{ label: 'Charts & Graphs', kind: 'bar_chart', to: 'charts-graphs' },
-			{ label: 'Rules', kind: 'table_chart', to: 'rules' },
-			{ label: 'Extracts', kind: 'table_chart', to: 'extracts' }
+			{ label: 'Add New Apps', kind: 'assignment', to: 'new-app' }
 		];
 		const lowerDrawerSection = [
 			{ label: 'Source Code', kind: 'code', to: 'github' },
@@ -143,17 +140,6 @@ class MiniDrawer extends React.Component {
 						>
 							<MenuIcon />
 						</IconButton>
-						<Tabs
-							value={this.state.value}
-							onChange={this.handleChange}
-							indicatorColor="primary"
-							textColor="primary"
-							variant="fullWidth"
-						>
-							<Tab label="Material UI" />
-							<Tab label="AppBar" />
-							<Tab label="Component" />
-						</Tabs>
 					</Toolbar>
 				</AppBar>
 				<Drawer

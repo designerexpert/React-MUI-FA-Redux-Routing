@@ -11,6 +11,7 @@ import Github from './components/Frames/Github';
 import RuleManager from './pages/RuleManager';
 import ExtractManager from './pages/ExtractManager';
 import AppStore from './pages/AppStore';
+import NewAppForm from './pages/NewAppForm';
 
 import { connect } from 'react-redux';
 import { userAuth } from './actions';
@@ -77,16 +78,8 @@ class App extends Component {
 			<React.Fragment>
 				<BrowserRouter>
 					<Navigation>
-						<Route path="/" exact component={MaterialUi} />
-						<Route path="/font-awesome" component={FontAwesome} />
-						<Route path="/forms-validation" component={MuiForms} />
-						<Route path="/tables-pagination" component={MuiTables} />
-						<Route path="/charts-graphs" component={Charts} />
-						<Route path="/sandbox" component={Sandbox} />
-						<Route path="/github" component={Github} />
-						<Route path="/rules" component={RuleManager} />
-						<Route path="/extracts" component={ExtractManager} />
-						<Route path="/app-store" component={AppStore} />
+						<Route path="/" exact component={AppStore} />
+						<Route path="/new-app" exact component={NewAppForm} />
 					</Navigation>
 				</BrowserRouter>
 			</React.Fragment>

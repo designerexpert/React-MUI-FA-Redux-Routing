@@ -4,7 +4,8 @@
 */
 export const actionTypes = {
 	USER_AUTH: 'USER_AUTH',
-	USER_LOG_OUT: 'USER_LOG_OUT'
+	USER_LOG_OUT: 'USER_LOG_OUT',
+	APP_SHORTCUT_ADD: 'APP_SHORTCUT_ADD'
 };
 
 /* BEGIN USER ACTIONS */
@@ -22,3 +23,9 @@ export const userLogOut = (payload) => {
 	};
 };
 /* END USER ACTIONS */
+export const appShortcutAdd = (payload) => {
+	return {
+		type: actionTypes.APP_SHORTCUT_ADD,
+		payload
+	};
+};

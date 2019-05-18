@@ -9,9 +9,19 @@ export default createMuiTheme({
 	palette: {
 		type: 'dark',
 		primary: blue,
-		secondary: red
+		secondary: red,
+		background: {
+			default: '#111111'
+		}
 	},
 	status: {
 		danger: 'orange'
+	},
+	overrides: {
+		MuiDrawer: {
+			paper: {
+				background: '#13171F'
+			}
+		}
 	}
 });

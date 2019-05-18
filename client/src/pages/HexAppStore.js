@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { HexGrid, Layout, Hexagon, Text, Pattern, Path, Hex } from 'react-hexgrid';
-import './AppStore.css';
+import './HexAppStore.css';
 
 class AppStore extends Component {
 	render() {
