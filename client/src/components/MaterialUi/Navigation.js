@@ -15,8 +15,6 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import FontIcon from './Icons/FontIcon';
 import { Link } from 'react-router-dom';
 
@@ -30,7 +28,7 @@ const styles = (theme) => ({
 		backgroundColor: '#1F1F1F',
 		height: theme.spacing.unit * 7,
 		zIndex: theme.zIndex.drawer + 1,
-		transition: theme.transitions.create([ 'width', 'margin' ], {
+		transition: theme.transitions.create(['width', 'margin'], {
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.leavingScreen
 		})
@@ -39,7 +37,7 @@ const styles = (theme) => ({
 		height: theme.spacing.unit * 7,
 		marginLeft: drawerWidth,
 		width: `calc(100% - ${drawerWidth}px)`,
-		transition: theme.transitions.create([ 'width', 'margin' ], {
+		transition: theme.transitions.create(['width', 'margin'], {
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.enteringScreen
 		})
@@ -82,8 +80,12 @@ const styles = (theme) => ({
 		height: theme.spacing.unit * 7
 	},
 	content: {
+		width: `calc(100vw - ${drawerWidth}px)`,
+		height: `100vh`,
 		flexGrow: 1,
-		padding: theme.spacing.unit * 3
+		padding: theme.spacing.unit * 3,
+		overflowY: 'auto',
+		overflowX: 'hidden'
 	}
 });
 
@@ -111,14 +113,7 @@ class MiniDrawer extends React.Component {
 			{ label: 'Home', kind: 'home', to: '/' },
 			{ label: 'Add New Apps', kind: 'assignment', to: 'new-app' }
 		];
-		const lowerDrawerSection = [
-			{ label: 'Source Code', kind: 'code', to: 'github' },
-			{
-				label: 'Sandbox Environment',
-				kind: 'computer',
-				to: 'sandbox'
-			}
-		];
+		const lowerDrawerSection = [];
 		return (
 			<div className={classes.root}>
 				<CssBaseline />

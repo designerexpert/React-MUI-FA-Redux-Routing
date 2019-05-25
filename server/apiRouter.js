@@ -15,8 +15,8 @@ const generateToken = (req, res) => {
 		const payload = {
 			sub: 'test',
 			name: 'designerexpert',
-			roles: [ 'SOME, ROLE, HERE', 'ANOTHER, ROLE, HERE' ],
-			adGroups: [ 'SOME_AD_GROUP', 'ANOTHER_AD_GROUP' ]
+			roles: ['SOME, ROLE, HERE', 'ANOTHER, ROLE, HERE'],
+			adGroups: ['SOME_AD_GROUP', 'ANOTHER_AD_GROUP']
 		};
 		const token = jwt.sign(payload, secret, { algorithm: 'RS256', expiresIn: 60 * 5 });
 		res.setHeader('Authorization', `Bearer ${token}`);

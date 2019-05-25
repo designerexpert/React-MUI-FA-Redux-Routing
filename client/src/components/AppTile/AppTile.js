@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import { withTheme } from '@material-ui/core/styles';
-import Hidden from '@material-ui/core/Hidden';
-import { appShortcutAdd } from '../../actions';
+
 
 function mapStateToProps(state) {
 	return {
@@ -24,6 +22,7 @@ const styles = (theme) => ({
 		margin: theme.spacing.unit * 3
 	},
 	appTile: {
+		position: 'relative',
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
@@ -89,11 +88,10 @@ const styles = (theme) => ({
 		textTransform: 'uppercase',
 		transition: 'opacity ease-in 0.5s, height  ease-in 0.5s'
 	},
-	appAbbreviation: {
-		display: 'flex',
-		padding: theme.spacing.unit * 2,
-		marginTop: theme.spacing.unit * -4,
-		textAlign: 'center',
+	appAbbreviationPerm: {
+		position: 'absolute',
+		top: theme.spacing.unit * 8,
+		center: 0,
 		color: '#FFF !important',
 		visibility: 'visible',
 		opacity: 1,
@@ -101,17 +99,19 @@ const styles = (theme) => ({
 		fontWeight: 900,
 		textTransform: 'uppercase'
 	},
-	appAbbreviationSml: {
+	appStack: {
 		display: 'flex',
+		position: 'absolute',
+		bottom: theme.spacing.unit * 2,
+		center: 0,
 		padding: theme.spacing.unit * 2,
-		marginTop: theme.spacing.unit * -12.5,
 		textAlign: 'center',
 		color: '#FFF !important',
 		visibility: 'visible',
 		opacity: 1,
-		fontSize: theme.spacing.unit * 8,
-		fontWeight: 900,
-		textTransform: 'uppercase'
+		fontSize: theme.spacing.unit * 1,
+		textTransform: 'uppercase',
+		transition: 'opacity ease-in 0.5s, height  ease-in 0.5s'
 	}
 });
 
@@ -134,24 +134,24 @@ class AppTile extends Component {
 		console.log('TILE PROPS', this.props);
 		const { active } = this.state;
 		const { classes, appShortcutAdd, app } = this.props;
-		const { id, index, label, abbreviation, url, logo, color, description, borderColor } = app;
+		const { id, index, label, abbreviation, url, logo, color, description, borderColor, techStack } = app;
 		return (
 			<div className={classes.root} onMouseEnter={this.activate} onMouseLeave={this.deactivate}>
 				<div
 					className={active ? classes.appTileExpanded : classes.appTile}
 					style={{ borderColor: borderColor, backgroundColor: color }}
 				>
-					<Typography component="h1" className={active ? classes.appLabelLarge : classes.hidden}>
+					<Typography component="h2" className={active ? classes.appLabelLarge : classes.hidden}>
 						{label}
 					</Typography>
-					<Typography component="h1" className={active ? classes.appDescription : classes.hidden}>
+					<Typography component="h3" className={active ? classes.appDescription : classes.hidden}>
 						{description}
 					</Typography>
-					<Typography component="h1" className={active ? classes.appAbbreviation : classes.hidden}>
+					<Typography component="h5" className={classes.appAbbreviationPerm}>
 						{abbreviation}
 					</Typography>
-					<Typography component="h1" className={active ? classes.hidden : classes.appAbbreviationSml}>
-						{abbreviation}
+					<Typography component="h3" className={active ? classes.appStack : classes.hidden}>
+						{techStack}
 					</Typography>
 				</div>
 
